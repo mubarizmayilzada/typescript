@@ -1,10 +1,14 @@
-function add(num1, num2, showResult, phares) {
-    if (showResult) {
-        console.log(phares + (num1 + num2));
+var person = {
+    name: "Marz",
+    age: 19
+};
+var product = {
+    id: 'abc1',
+    price: 12.99,
+    tags: ['great-offer', 'hot-and-new'],
+    details: {
+        title: 'Red Carpet',
+        description: 'A great carpet - almost brand-new!'
     }
-}
-var number1 = 6;
-var number2 = 20;
-var showResult = true;
-var phares = 'result is: ';
-add(number1, number2, showResult, phares);
+};
+console.log(product.price);

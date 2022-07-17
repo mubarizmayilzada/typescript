@@ -1,12 +1,27 @@
-function add(num1: number, num2: number, showResult: boolean, phares: string){
-    if(showResult){
-        console.log(phares + (num1 + num2));
-    }
+const person: {
+    name: string;
+    age: number;
+} = {
+    name: "Marz",
+    age: 19
 }
 
-const number1 = 6;
-const number2 = 20;
-const showResult = true;
-const phares = 'result is: ';
+const product: {
+    id: string;
+    price: number;
+    tags: string[];
+    details: {
+      title: string;
+      description: string;
+    }
+  } = {
+    id: 'abc1',
+    price: 12.99,
+    tags: ['great-offer', 'hot-and-new'],
+    details: {
+      title: 'Red Carpet',
+      description: 'A great carpet - almost brand-new!'
+    }
+  }
 
-add(number1, number2,showResult,phares);
+console.log(product.price);
