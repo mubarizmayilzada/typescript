@@ -1,6 +1,8 @@
 var person = {
     name: "Marz",
-    age: 19
+    age: 19,
+    hobbies: ['hiking', 'puzzle'],
+    role: [1, 'developer'] // tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
 };
 var product = {
     id: 'abc1',

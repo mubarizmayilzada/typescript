@@ -1,9 +1,13 @@
 const person: {
     name: string;
     age: number;
+    hobbies: string[];
+    role: [number, string] // tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
 } = {
     name: "Marz",
-    age: 19
+    age: 19,
+    hobbies: ['hiking', 'puzzle'],
+    role: [1, 'developer']// tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
 }
 
 const product: {
