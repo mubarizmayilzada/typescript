@@ -22,6 +22,12 @@ const product: {
       title: 'Red Carpet',
       description: 'A great carpet - almost brand-new!'
     }
-  }
+  };
+
+  let favoriteActivities: string[];
+  favoriteActivities = ['hiking'] // can`t contain any number or other types
+  //if we want to create an unikal array then we must use `any` type instead of string
+
+
 
 console.log(product.price);
