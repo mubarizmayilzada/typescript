@@ -1,14 +1,32 @@
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string] // tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
-} = {
+// const person: {
+//     name: string;
+//     age: number;
+//     hobbies: string[];
+//     role: [number, string] // tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
+// } = {
+//     name: "Marz",
+//     age: 19,
+//     hobbies: ['hiking', 'puzzle'],
+//     role: [1, 'developer']// tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
+// }
+
+
+//this enum is just custom type
+enum Role {ADMIN = 'admin', SUPER_ADMIN = 'super admin', AUTHOR = 'author'};
+
+
+const person = {
     name: "Marz",
     age: 19,
     hobbies: ['hiking', 'puzzle'],
-    role: [1, 'developer']// tuble. this mean we can`t pass data more from two and also we cant pass string instead of number or opasite; 
+    role: Role.ADMIN
 }
+
+if(person.role === Role.ADMIN){
+    console.log(`this is ${Role.ADMIN}`);
+    
+}
+
 
 const product: {
     id: string;
