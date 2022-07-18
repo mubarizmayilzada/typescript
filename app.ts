@@ -1,23 +1,16 @@
-// custom types
-type Combinable = number | string;
-type ConversionDescriptor = "as-text" | "as-number";
+function add(num1: number,num2: number){
+    return num1 + num2;
+};
 
-function combine(
-  var1: Combinable,
-  var2: Combinable,
-  resultType: ConversionDescriptor
-) {
-  let result;
-  if (
-    (typeof var1 === "number" && typeof var2 === "number") ||
-    resultType === "as-number"
-  ) {
-    return (result = +var1 + +var2);
-  } else {
-    return (result = var1.toString() + var2.toString());
-  }
-}
-// that is the union types ( | )
+function printResult(num: number){
+    return ("result" + num);
+};
 
-console.log(combine("marz", "sara", "as-text"));
-console.log(combine(18, 11, "as-number"));
+printResult(add(5,7));
+
+//this mean is, the variable combineValues just can be hold function which it get two parametr in number type and it mut be return  also number type value;
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+
+console.log(combineValues(4,5));

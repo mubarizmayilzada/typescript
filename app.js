@@ -1,13 +1,13 @@
-function combine(var1, var2, resultType) {
-    var result;
-    if ((typeof var1 === "number" && typeof var2 === "number") ||
-        resultType === "as-number") {
-        return (result = +var1 + +var2);
-    }
-    else {
-        return (result = var1.toString() + var2.toString());
-    }
+function add(num1, num2) {
+    return num1 + num2;
 }
-// that is the union types ( | )
-console.log(combine("marz", "sara", "as-text"));
-console.log(combine(18, 11, "as-number"));
+;
+function printResult(num) {
+    return ("result" + num);
+}
+;
+printResult(add(5, 7));
+//this mean is, the variable combineValues just can be hold function which it get two parametr in number type and it mut be return  also number type value;
+var combineValues;
+combineValues = add;
+console.log(combineValues(4, 5));
