@@ -1,13 +1,8 @@
-var userInput;
-var userName;
-userInput = 5;
-userInput = 'marz';
-if (typeof userInput === 'string') {
-    userName = userInput;
+var add = function (a, b) { return a + b; };
+var printOutput = function (output) { return console.log(output); };
+var button = document.querySelector('button');
+if (button) //because typescript doesn't know if button already exist or not we must be check that
+ {
+    button.addEventListener('click', function (event) { return console.log(event); });
 }
-;
-function generateError(message, code) {
-    throw { message: message, errorCode: code };
-}
-//if function holding the throw error or infinity loop (while(true)) this mean the function type is never, not void because it don`t show even undefined; 
-generateError('this is an error message', 500);
+printOutput(add(5, 2));
