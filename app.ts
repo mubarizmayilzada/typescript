@@ -10,3 +10,21 @@ if(button) //because typescript doesn't know if button already exist or not we m
 }
 
 printOutput(add(5));
+
+
+
+const hobbies = ['Sports', 'Cooking'];
+const activeHobbies = ['hiking'];
+
+activeHobbies.push(...hobbies);
+
+
+const person: {
+    name: string,
+    age: number
+} = {
+    name: 'Marz',
+    age: 19
+};
+
+const copiedPerson = {...person };
