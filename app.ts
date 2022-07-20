@@ -1,4 +1,4 @@
-const add = (a: number, b: number) => a + b;
+const add = (a: number, b: number = 1) => a + b;
 
 const printOutput: (a: string | number) => void = output => console.log(output); 
 
@@ -9,4 +9,4 @@ if(button) //because typescript doesn't know if button already exist or not we m
     button.addEventListener('click', event => console.log(event));
 }
 
-printOutput(add(5,2));
+printOutput(add(5));
