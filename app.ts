@@ -20,10 +20,10 @@ activeHobbies.push(...hobbies);
 
 
 const person: {
-    name: string,
+    firstName: string,
     age: number
 } = {
-    name: 'Marz',
+    firstName: 'Marz',
     age: 19
 };
 
@@ -38,3 +38,9 @@ const add = (...numbers: number[]) => {
 const addedNumbers = add(5,6,7,8,34);
 
 console.log(addedNumbers);
+
+
+const [hobby1, hobby2, ...otherHobbies] = hobbies;
+
+const {firstName: userName, age} = person;
+

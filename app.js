@@ -21,7 +21,7 @@ var hobbies = ['Sports', 'Cooking'];
 var activeHobbies = ['hiking'];
 activeHobbies.push.apply(activeHobbies, hobbies);
 var person = {
-    name: 'Marz',
+    firstName: 'Marz',
     age: 19
 };
 var copiedPerson = __assign({}, person);
@@ -35,3 +35,5 @@ var add = function () {
 };
 var addedNumbers = add(5, 6, 7, 8, 34);
 console.log(addedNumbers);
+var hobby1 = hobbies[0], hobby2 = hobbies[1], otherHobbies = hobbies.slice(2);
+var userName = person.firstName, age = person.age;
