@@ -1,11 +1,16 @@
 var Department = /** @class */ (function () {
-    function Department(n) {
+    function Department(id, name) {
+        this.id = id;
+        this.name = name;
+        // private id: string;
+        // name: string;
         this.employees = [];
-        this.name = n;
+        // this.name = n;
+        // this.id = id;
     }
     ;
     Department.prototype.describe = function () {
-        console.log(this.name);
+        console.log("department: (".concat(this.id, ") ").concat(this.name));
     };
     Department.prototype.addEmployee = function (employee) {
         this.employees.push(employee);
@@ -17,7 +22,7 @@ var Department = /** @class */ (function () {
     return Department;
 }());
 ;
-var accounting = new Department('Accounting');
+var accounting = new Department('d1', 'Accounting');
 accounting.describe();
 accounting.addEmployee('Marz');
 accounting.addEmployee('Sara');
