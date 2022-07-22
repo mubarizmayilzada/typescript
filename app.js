@@ -60,6 +60,12 @@ var AccountingDepartment = /** @class */ (function (_super) {
     AccountingDepartment.prototype.printReports = function () {
         console.log(this.reports);
     };
+    AccountingDepartment.prototype.addEmployee = function (name) {
+        if (name === 'Max') {
+            return;
+        }
+        this.employees.push(name);
+    };
     return AccountingDepartment;
 }(Department));
 ;
@@ -67,6 +73,8 @@ var itAccounting = new ITDepartment('d1', ['MARZ']);
 var accountingDepartment = new AccountingDepartment('d2', []);
 accountingDepartment.addReport('this is the report');
 accountingDepartment.printReports();
+accountingDepartment.addEmployee('MARZ');
+accountingDepartment.printEmployeeInformation();
 itAccounting.describe();
 itAccounting.addEmployee('Marz');
 itAccounting.addEmployee('Sara');
