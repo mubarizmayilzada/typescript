@@ -1,3 +1,7 @@
+var add;
+add = function (n1, n2) {
+    return n1 + n2;
+};
 var Person = /** @class */ (function () {
     function Person(name) {
         this.age = 30;
