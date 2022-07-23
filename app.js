@@ -29,9 +29,9 @@ var Department = /** @class */ (function () {
     Department.createEmployee = function (name) {
         return { name: name };
     };
-    Department.prototype.describe = function () {
-        console.log("department: (".concat(this.id, ") ").concat(this.name));
-    };
+    // {
+    // console.log(`department: (${this.id}) ${this.name}`);
+    // }
     Department.prototype.addEmployee = function (employee) {
         this.employees.push(employee);
     };
@@ -50,33 +50,35 @@ var ITDepartment = /** @class */ (function (_super) {
         _this.admins = admins;
         return _this;
     }
+    ITDepartment.prototype.describe = function () {
+        console.log('IT Department - ID: ' + this.id);
+    };
     return ITDepartment;
 }(Department));
 ;
 var AccountingDepartment = /** @class */ (function (_super) {
     __extends(AccountingDepartment, _super);
+    // get mostRecentReport() {
+    //     if(this.lastReport){
+    //         return this.lastReport;
+    //     }
+    //     throw new Error('No report found');
+    // } 
+    // set mostRecentReport(value: string) { 
+    //     if (!value) {
+    //         throw new Error('please pass in a valid value!');
+    //     }
+    //     this.addReport(value);
+    // }
     function AccountingDepartment(id, reports) {
         var _this = _super.call(this, id, 'Accounting') || this;
         _this.reports = reports;
         _this.lastReport = reports[0];
         return _this;
     }
-    Object.defineProperty(AccountingDepartment.prototype, "mostRecentReport", {
-        get: function () {
-            if (this.lastReport) {
-                return this.lastReport;
-            }
-            throw new Error('No report found');
-        },
-        set: function (value) {
-            if (!value) {
-                throw new Error('please pass in a valid value!');
-            }
-            this.addReport(value);
-        },
-        enumerable: false,
-        configurable: true
-    });
+    AccountingDepartment.prototype.describe = function () {
+        console.log('Accounting Department - ID: ' + this.id);
+    };
     AccountingDepartment.prototype.addReport = function (text) {
         this.reports.push(text);
         this.lastReport = text;
@@ -97,7 +99,9 @@ var AccountingDepartment = /** @class */ (function (_super) {
 var employee1 = Department.createEmployee('Marz');
 var itAccounting = new ITDepartment('d1', ['MARZ']);
 var accountingDepartment = new AccountingDepartment('d2', []);
-accountingDepartment.mostRecentReport = 'Year end report';
+itAccounting.describe();
+accountingDepartment.describe();
+// accountingDepartment.mostRecentReport = 'Year end report';
 accountingDepartment.addReport('this is the report');
 accountingDepartment.printReports();
 accountingDepartment.addEmployee('MARZ');

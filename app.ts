@@ -1,10 +1,10 @@
-class Department {
+abstract class Department {
     static fiscalYear = 2020;
     // private id: string;
     // name: string;
     protected employees: string[] = [];
 
-    constructor(private readonly id: string, public name: string) {
+    constructor(protected readonly id: string, public name: string) {
         // this.name = n;
         // this.id = id;
 
@@ -16,9 +16,10 @@ class Department {
         return {name: name}
     }
 
-    describe(this: Department){
-        console.log(`department: (${this.id}) ${this.name}`);
-    }
+    abstract describe(this: Department): void;
+    // {
+        // console.log(`department: (${this.id}) ${this.name}`);
+    // }
 
     addEmployee(employee: string){
         this.employees.push(employee);
@@ -36,27 +37,35 @@ class ITDepartment extends Department {
         super(id, 'IT');
         this.admins = admins;
     }
+
+    describe() {
+        console.log('IT Department - ID: ' + this.id);  
+    }
 };
 
 class AccountingDepartment extends Department {
     private lastReport: string;
 
-    get mostRecentReport() {
-        if(this.lastReport){
-            return this.lastReport;
-        }
-        throw new Error('No report found');
-    } 
+    // get mostRecentReport() {
+    //     if(this.lastReport){
+    //         return this.lastReport;
+    //     }
+    //     throw new Error('No report found');
+    // } 
 
-    set mostRecentReport(value: string) { 
-        if (!value) {
-            throw new Error('please pass in a valid value!');
-        }
-        this.addReport(value);
-    }
+    // set mostRecentReport(value: string) { 
+    //     if (!value) {
+    //         throw new Error('please pass in a valid value!');
+    //     }
+    //     this.addReport(value);
+    // }
     constructor(id: string, private reports: string[]){
         super(id, 'Accounting');
         this.lastReport = reports[0];
+    }
+
+    describe() {
+        console.log('Accounting Department - ID: ' + this.id);  
     }
 
     addReport(text: string){
@@ -82,7 +91,12 @@ const employee1 = Department.createEmployee('Marz');
 const itAccounting = new ITDepartment('d1',['MARZ']);
 const accountingDepartment = new AccountingDepartment('d2',[]);
 
-accountingDepartment.mostRecentReport = 'Year end report';
+
+itAccounting.describe();
+accountingDepartment.describe();
+
+
+// accountingDepartment.mostRecentReport = 'Year end report';
 accountingDepartment.addReport('this is the report');
 accountingDepartment.printReports();
 
