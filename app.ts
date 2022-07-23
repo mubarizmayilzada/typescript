@@ -1,4 +1,5 @@
 class Department {
+    static fiscalYear = 2020;
     // private id: string;
     // name: string;
     protected employees: string[] = [];
@@ -6,7 +7,14 @@ class Department {
     constructor(private readonly id: string, public name: string) {
         // this.name = n;
         // this.id = id;
+
+        //this.fiscalYear does not work because it is not instance of new department.
+        // console.log(Department.fiscalYear);
     };
+
+    static createEmployee(name: string){
+        return {name: name}
+    }
 
     describe(this: Department){
         console.log(`department: (${this.id}) ${this.name}`);
@@ -67,6 +75,9 @@ class AccountingDepartment extends Department {
         this.employees.push(name);
     }
 };
+
+//with static keyword we can call directly from class like Math.random or smth.
+const employee1 = Department.createEmployee('Marz');
 
 const itAccounting = new ITDepartment('d1',['MARZ']);
 const accountingDepartment = new AccountingDepartment('d2',[]);

@@ -15,15 +15,20 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var Department = /** @class */ (function () {
     function Department(id, name) {
+        // this.name = n;
+        // this.id = id;
         this.id = id;
         this.name = name;
         // private id: string;
         // name: string;
         this.employees = [];
-        // this.name = n;
-        // this.id = id;
+        //this.fiscalYear does not work because it is not instance of new department.
+        // console.log(Department.fiscalYear);
     }
     ;
+    Department.createEmployee = function (name) {
+        return { name: name };
+    };
     Department.prototype.describe = function () {
         console.log("department: (".concat(this.id, ") ").concat(this.name));
     };
@@ -34,6 +39,7 @@ var Department = /** @class */ (function () {
         console.log(this.employees.length);
         console.log(this.employees);
     };
+    Department.fiscalYear = 2020;
     return Department;
 }());
 ;
@@ -87,6 +93,8 @@ var AccountingDepartment = /** @class */ (function (_super) {
     return AccountingDepartment;
 }(Department));
 ;
+//with static keyword we can call directly from class like Math.random or smth.
+var employee1 = Department.createEmployee('Marz');
 var itAccounting = new ITDepartment('d1', ['MARZ']);
 var accountingDepartment = new AccountingDepartment('d2', []);
 accountingDepartment.mostRecentReport = 'Year end report';
