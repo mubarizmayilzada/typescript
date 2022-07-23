@@ -105,6 +105,14 @@ function moveAnimal (animal: Animal){
         default:
             break;
     }
-    console.log('Moving at speed ' + speed);
-    
+    console.log('Moving at speed ' + speed);   
+}
+
+
+// const userInputElement = document.querySelector('#userInput')! as HTMLInputElement;
+const userInputElement = document.querySelector('#userInput');
+
+// userInputElement.value = 'Hi there';
+if(userInputElement){
+    (userInputElement as HTMLInputElement).value = 'Hi there';
 }

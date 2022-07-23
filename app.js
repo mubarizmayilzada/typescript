@@ -66,3 +66,9 @@ function moveAnimal(animal) {
     }
     console.log('Moving at speed ' + speed);
 }
+// const userInputElement = document.querySelector('#userInput')! as HTMLInputElement;
+var userInputElement = document.querySelector('#userInput');
+// userInputElement.value = 'Hi there';
+if (userInputElement) {
+    userInputElement.value = 'Hi there';
+}
