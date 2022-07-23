@@ -58,6 +58,12 @@ var ITDepartment = /** @class */ (function (_super) {
 ;
 var AccountingDepartment = /** @class */ (function (_super) {
     __extends(AccountingDepartment, _super);
+    function AccountingDepartment(id, reports) {
+        var _this = _super.call(this, id, 'Accounting') || this;
+        _this.reports = reports;
+        _this.lastReport = reports[0];
+        return _this;
+    }
     // get mostRecentReport() {
     //     if(this.lastReport){
     //         return this.lastReport;
@@ -70,12 +76,14 @@ var AccountingDepartment = /** @class */ (function (_super) {
     //     }
     //     this.addReport(value);
     // }
-    function AccountingDepartment(id, reports) {
-        var _this = _super.call(this, id, 'Accounting') || this;
-        _this.reports = reports;
-        _this.lastReport = reports[0];
-        return _this;
-    }
+    AccountingDepartment.getInstance = function () {
+        if (AccountingDepartment.instance) {
+            return this.instance;
+        }
+        ;
+        this.instance = new AccountingDepartment('d2', []);
+        return this.instance;
+    };
     AccountingDepartment.prototype.describe = function () {
         console.log('Accounting Department - ID: ' + this.id);
     };
@@ -98,7 +106,7 @@ var AccountingDepartment = /** @class */ (function (_super) {
 //with static keyword we can call directly from class like Math.random or smth.
 var employee1 = Department.createEmployee('Marz');
 var itAccounting = new ITDepartment('d1', ['MARZ']);
-var accountingDepartment = new AccountingDepartment('d2', []);
+var accountingDepartment = AccountingDepartment.getInstance();
 itAccounting.describe();
 accountingDepartment.describe();
 // accountingDepartment.mostRecentReport = 'Year end report';
