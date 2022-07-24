@@ -72,3 +72,7 @@ var userInputElement = document.querySelector('#userInput');
 if (userInputElement) {
     userInputElement.value = 'Hi there';
 }
+var errorBag = {
+    email: 'Not a valid email address!',
+    username: 'Must start with a capital character!'
+};
