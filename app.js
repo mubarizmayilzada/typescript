@@ -1,3 +1,4 @@
+var _a;
 var e1 = {
     name: 'Marz',
     privileges: ['create-server'],
@@ -11,6 +12,12 @@ function add(a, b) {
 }
 var nisa = add('Marz', ' Sara');
 nisa.split(' ');
+var fetchedUserData = {
+    name: 'marz',
+    age: 19,
+    job: { 'title': 'Front-end engineer', 'description': 'build some sites' }
+};
+console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 function printEmployeeInformation(emp) {
     console.log(emp.name);
     if ('startDate' in emp) {

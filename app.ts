@@ -39,6 +39,15 @@ const nisa = add('Marz', ' Sara');
 nisa.split(' ');
 
 
+const fetchedUserData = {
+    name: 'marz',
+    age: 19,
+    job: {'title': 'Front-end engineer', 'description': 'build some sites'}
+}
+
+console.log(fetchedUserData?.job?.title);
+
+
 
 type unknownEmployee = Employee | Admin;
 
