@@ -18,6 +18,9 @@ var fetchedUserData = {
     job: { 'title': 'Front-end engineer', 'description': 'build some sites' }
 };
 console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
+//Nullish Coalescing mean if data is just null or undefined then execute another value. not falsy, just null or undefined.
+var userInput = null;
+var holdInputData = userInput !== null && userInput !== void 0 ? userInput : 'Default';
 function printEmployeeInformation(emp) {
     console.log(emp.name);
     if ('startDate' in emp) {

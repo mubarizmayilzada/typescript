@@ -47,6 +47,9 @@ const fetchedUserData = {
 
 console.log(fetchedUserData?.job?.title);
 
+//Nullish Coalescing mean if data is just null or undefined then execute another value. not falsy, just null or undefined.
+const userInput = null;
+const holdInputData = userInput ?? 'Default';
 
 
 type unknownEmployee = Employee | Admin;
