@@ -9,6 +9,8 @@ function add(a, b) {
     }
     return a + b;
 }
+var nisa = add('Marz', ' Sara');
+nisa.split(' ');
 function printEmployeeInformation(emp) {
     console.log(emp.name);
     if ('startDate' in emp) {
