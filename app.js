@@ -8,3 +8,8 @@
 // promise.then((data)=>{
 //     data.split(' ');
 // })
+function merge(objA, objB) {
+    return Object.assign(objA, objB);
+}
+var mergeObj = merge({ name: 'marz', hobbies: ['hiking', 'puzzle'] }, { age: 20 });
+console.log(mergeObj.age);
