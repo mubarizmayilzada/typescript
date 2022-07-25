@@ -11,9 +11,27 @@
 //     data.split(' ');
 // })
 
-function merge<T extends object,U extends object>(objA: T, objB: U) {
-    return Object.assign(objA, objB);
+// function merge<T extends object,U extends object>(objA: T, objB: U) {
+//     return Object.assign(objA, objB);
+// }
+
+// const mergeObj = merge({name: 'marz', hobbies: ['hiking', 'puzzle']}, {age: 20});
+// console.log(mergeObj.age);
+
+
+interface Lengthly{
+    length: number;
 }
 
-const mergeObj = merge({name: 'marz', hobbies: ['hiking', 'puzzle']}, {age: 20});
-console.log(mergeObj.age);
+function countAndDescribe<T extends Lengthly>(element: T): [T, string]{
+    let descriptionText = 'Got no value.'
+    if(element.length === 1){
+        descriptionText = 'Got 1 elements.';
+    }
+    else if(element.length > 1){
+        descriptionText = 'Got ' + element.length + ' elements.';
+    }
+    return [element, descriptionText]
+}
+
+countAndDescribe('hi there!');
