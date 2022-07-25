@@ -35,3 +35,9 @@ function countAndDescribe<T extends Lengthly>(element: T): [T, string]{
 }
 
 countAndDescribe('hi there!');
+
+function extractAndConvert<T extends object,U extends keyof T>(obj: T, key: U){
+    return 'Value: ' + obj[key];
+}
+
+extractAndConvert({name: 'Marz'}, 'name');
